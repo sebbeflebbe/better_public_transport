@@ -93,7 +93,7 @@ function Map() {
 
       if (!window.google) {
         const script = document.createElement("script");
-        script.src = `https://maps.googleapis.com/maps/api/js?key=<YOUR_API_KEY>&libraries=places`;
+        script.src = `https://maps.googleapis.com/maps/api/js?key={}&libraries=places`;
         script.onload = initMap;
         document.head.appendChild(script);
       } else {
