@@ -1,3 +1,3 @@
-# better_public_transport
+# Geocatching Halloween
 
 WORK IN PROGRESS
