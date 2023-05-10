@@ -12,6 +12,29 @@
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <title>React App</title>
+    <style>
+      /* CSS styles for the list */
+      .list {
+        border: 1px solid black;
+        margin-top: 20px;
+        padding: 10px;
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      th, td {
+        text-align: left;
+        padding: 8px;
+        border-bottom: 1px solid #ddd;
+      }
+
+      th {
+        background-color: #f2f2f2;
+      }
+    </style>
     <script
       const KEY = process.env.GOOGLE_MAPS_KEY
       src='https://maps.googleapis.com/maps/api/js?key={}&libraries=places'
@@ -21,5 +44,167 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    <div class="list">
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Visited</th>
+            <th>Score</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Dracula's Castle</td>
+            <td></td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>The Witch's Hut</td>
+            <td></td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>Frankenstein's Lab</td>
+            <td></td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>The Ghostly Mansion</td>
+            <td></td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>The Haunted Cemetery</td>
+            <td></td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>The Abandoned Asylum</td>
+            <td></td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>The Cursed Woods</td>
+            <td></td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>The Dark Crypt</td>
+            <td></td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>The Phantom's Lair</td>
+            <td></td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>The Creepy Carnival</td>
+            <td></td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>The Spooky Swamp</td>
+            <td></td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>The Mysterious Manor</td>
+            <td></td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>The Shadowy Tower</td>
+            <td></td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>The Eerie Graveyard</td>
+            <td></td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>The Enchanted Forest</td>
+            <td></td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>The Sinister Street</td>
+            <td></td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>The Ghoul's Hideout</td>
+            <td></td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>The Grim Tombstone</td>
+            <td></td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>The Macabre Mansion</td>
+            <td></td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>The Ominous Observatory</td>
+            <td></td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>The Petrifying Pyramid</td>
+            <td></td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>The Uncanny Valley</td>
+            <td></td>
+            <td>0
+              <tr>
+                <td>The Vampiric Village</td>
+                <td></td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td>The Werewolf's Den</td>
+                <td></td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td>The Zombie Apocalypse</td>
+                <td></td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td>The Devil's Dungeon</td>
+                <td></td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td>The Demonic Dimension</td>
+                <td></td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td>The Ectoplasmic Estate</td>
+                <td></td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td>The Phantom's Phenomenon</td>
+                <td></td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td>The Raven's Nest</td>
+                <td></td>
+                <td>0</td>
+              </tr>        
+        </tbody>
+      </table>
+    </div>
   </body>
 </html>
