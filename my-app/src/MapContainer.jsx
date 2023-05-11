@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react";
 function Map() {
   const [location, setLocation] = useState(null);
   const [score, setScore] = useState(0);
+  const [activeMarker, setActiveMarker] = useState(null);
+  const [infoWindow, setInfoWindow] = useState(null);
 
   useEffect(() => {
     if (navigator.geolocation) {
@@ -71,6 +73,8 @@ function Map() {
           { lat: 57.6950, lng: 11.9257 }  // Aeroseum Aviation Museum
         ];
 
+        let infoWindow = new window.google.maps.InfoWindow();
+
         for (let i = 0; i < locations.length; i++) {
           const marker = new window.google.maps.Marker({
             position: locations[i],
@@ -81,29 +85,28 @@ function Map() {
               fillOpacity: 0.8,
               strokeColor: "white",
               strokeWeight: 1,
-              scale: 10, // decrease the scale to make markers smaller
+              scale: 10,
             },
-            title: markerNames[i % markerNames.length], // add a unique name to each marker
+            title: markerNames[i % markerNames.length],
           });
-          
+      
           window.google.maps.event.addListener(marker, 'click', function() {
-            const distance = window.google.maps.geometry.spherical.computeDistanceBetween(marker.getPosition(), new window.google.maps.LatLng(location.lat, location.lng));
             let newScore = score;
-            if (distance <= 5) { // if distance is within 5 meters
-              newScore += 20; // add 20 to the score
-            } else if (distance <= 20) { // if distance is within 20 meters
-              newScore += 15; // add 15 to the score
-            } else if (distance <= 50) { // if distance is within 50 meters
-              newScore += 10; // add 10 to the score
-            } else if (distance <= 100) { // if distance is within 100 meters
-              newScore += 5; // add 5 to the score
-            }
-            setScore(newScore); // update the score
-            marker.setMap(null); // remove the marker from the map
+            let scoringRules = "You scored 0 points.";
+            scoringRules += " The rules for scoring are: <br>";
+            scoringRules += "- Within 5 meters: 20 points <br>";
+            scoringRules += "- Within 20 meters: 15 points <br>";
+            scoringRules += "- Within 50 meters: 10 points <br>";
+            scoringRules += "- Within 100 meters: 5 points <br>";
+            infoWindow.setContent(`<div style='background-color: white;'>${marker.title}<br>Total score: ${newScore}<br>${scoringRules}</div>`);
+            infoWindow.open(map, marker);
+            // ...
           });
           
+          
+      
           markers.push(marker);
-        };                                
+        };                               
       };
 
       if (!window.google) {
